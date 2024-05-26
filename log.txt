@@ -1,0 +1,66 @@
+
+1716657280493: GET: /users
+
+1716657280696: GET: /favicon.ico
+
+1716657287564: GET: /api/users/99
+
+1716657292587: GET: /api/users/1
+
+1716657410057: GET: /api/users/
+
+1716657574068: POST: /api/users/
+
+1716657598124: GET: /api/users/1001
+
+1716689498891: GET: /
+
+1716689499663: GET: /
+
+1716689507999: GET: /users
+
+1716689508944: GET: /favicon.ico
+
+1716702165756: GET: /users
+
+1716702165921: GET: /favicon.ico
+
+1716702173114: GET: /about
+
+1716702189277: GET: /users
+
+1716702193433: GET: /api/users/1
+
+1716702351297: GET: /api/users/1
+
+1716702473081: POST: /api/users/1001
+
+1716702510164: POST: /api/users/1001
+
+1716702557078: GET: /api/users/1
+
+1716702572502: POST: /api/users/1001
+
+1716702654073: POST: /api/users/1001
+
+1716702673783: POST: /api/users/1001
+
+1716702696347: GET: /api/users/1001
+
+1716704421029: POST: /api/users
+
+1716704845422: POST: /api/users
+
+1716705012353: POST: /api/users
+
+1716705120206: GET: /users
+
+1716705120423: GET: /favicon.ico
+
+1716705302191: POST: /api/users
+
+1716705617880: POST: /api/users
+
+1716722328057: GET: /api/users/1
+
+1716722328175: GET: /favicon.ico
