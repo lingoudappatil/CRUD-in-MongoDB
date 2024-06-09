@@ -3,7 +3,6 @@ const fs = require("fs");
 
 const mongoose= require("mongoose");
 
-
 const app = express();
 const port = 8000;
 
@@ -24,7 +23,6 @@ const userSchema=new mongoose.Schema
      {
         type:String,
     },
-
     email:
         {
         type:String,
@@ -41,8 +39,10 @@ const userSchema=new mongoose.Schema
         },
     },{timestamps: true});
 
+
 //model
     const User = mongoose.model("User",userSchema);
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -56,6 +56,7 @@ app.use((req, res, next) => {
         next();
     });
 });
+
 
 // Routes
 app.get("/users",async (req, res) => {
@@ -74,7 +75,6 @@ app.get('/api/users',async (req, res) => {
 
     return res.json(alldbUsers);
 });
-
 app.route("/api/users/:id")
     .get(async(req, res) => {
         const alldbUsers=await User.findById(req.params.id);
@@ -118,7 +118,6 @@ app.post("/api/users", async(req, res) => {
 
 return res.status(201).json({msg:"Success"});
 });
-
 
 app.listen(port, () => console.log(`Server started at port ${port}`));
 
