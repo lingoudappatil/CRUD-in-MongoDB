@@ -1,6 +1,5 @@
 // db.js
 const mongoose = require("mongoose");
-
 const connectDB = async () => {
     try {
         await mongoose.connect('mongodb://127.0.0.1:27017/db_demo1', {
@@ -13,5 +12,4 @@ const connectDB = async () => {
         process.exit(1); // Exit process with failure
     }
 };
-
 module.exports = connectDB;
