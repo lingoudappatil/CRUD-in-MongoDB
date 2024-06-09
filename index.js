@@ -63,7 +63,7 @@ app.get("/users",async (req, res) => {
     const alldbUsers= await User.find({});
     const html = `
     <ul>
-    ${alldbUsers.map(user => `<li>${user.first_name} - ${user.email}</li>`).join('')}
+    ${alldbUsers.map(user => `<li>${user.id}-${user.first_name} - ${user.email}</li>`).join('')}
     </ul>
     `;
     res.send(html);
@@ -76,9 +76,11 @@ app.get('/api/users',async (req, res) => {
     return res.json(alldbUsers);
 });
 app.route("/api/users/:id")
-    .get(async(req, res) => {
+    .get(async(req, res) => 
+    {
         const alldbUsers=await User.findById(req.params.id);
         if (!alldbUsers) return res.status(404).json({ error: "User not found" });
+        
         return res.json(alldbUsers);
     })
 
@@ -120,5 +122,3 @@ return res.status(201).json({msg:"Success"});
 });
 
 app.listen(port, () => console.log(`Server started at port ${port}`));
-
-
