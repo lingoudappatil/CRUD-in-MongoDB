@@ -44,14 +44,17 @@ const userSchema=new mongoose.Schema
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use((req, res, next) => {
-    fs.appendFile("log.txt", `\n${Date.now()}: ${req.method}: ${req.path}\n`, (err) => {
-        if (err) {
+app.use((req, res, next) =>
+    {
+    fs.appendFile("log.txt", `\n${Date.now()}: ${req.method}: ${req.path}\n`, (err) =>
+        {
+          if (err) 
+          {
             console.error("Failed to write to log file", err);
-        }
+          }
         next();
-    });
-});
+      });
+  });
 
 // Routes
 app.get("/users",async (req, res) => {
