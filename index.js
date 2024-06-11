@@ -78,7 +78,6 @@ app.route("/api/users/:id")
     {
         const alldbUsers=await User.findById(req.params.id);
         if (!alldbUsers) return res.status(404).json({ error: "User not found" });
-        
         return res.json(alldbUsers);
     })
     .patch(async(req, res) => {
@@ -103,16 +102,16 @@ app.post("/api/users", async(req, res) => {
         !body.job_title
     ) 
     {
-        return res.status(400).json({ msg: "All fields are required" });
+       return res.status(400).json({ msg: "All fields are required" });
     }
    const  result= await User.create(
-       {
+    {
     first_name:body.first_name,
     last_name:body.last_name,
     email:body.email,
     gender:body.gender,
     job_title:body.job_title,   
-     });
+    });
 return res.status(201).json({msg:"Success"});
 });
 
