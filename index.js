@@ -1,8 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-
 const mongoose= require("mongoose");
-
 const app = express();
 const port = 8000;
 
@@ -39,10 +37,8 @@ const userSchema=new mongoose.Schema
         },
     },{timestamps: true});
 
-
 //model
     const User = mongoose.model("User",userSchema);
-
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -56,7 +52,6 @@ app.use((req, res, next) => {
         next();
     });
 });
-
 
 // Routes
 app.get("/users",async (req, res) => {
@@ -83,13 +78,11 @@ app.route("/api/users/:id")
         
         return res.json(alldbUsers);
     })
-
     .patch(async(req, res) => {
         // edit the user with id
         User.findByIdAndUpdate(req.params.id, {last_name: "Changed" })
         return res.json({ status: "success" });
     })
-
     .delete(async(req, res) => {
         // delete the user with id
         await User.findByIdAndDelete(req.params.id);
@@ -109,15 +102,14 @@ app.post("/api/users", async(req, res) => {
     {
         return res.status(400).json({ msg: "All fields are required" });
     }
-    
-   const  result= await User.create({
+   const  result= await User.create(
+       {
     first_name:body.first_name,
     last_name:body.last_name,
     email:body.email,
     gender:body.gender,
     job_title:body.job_title,   
-});
-
+     });
 return res.status(201).json({msg:"Success"});
 });
 
