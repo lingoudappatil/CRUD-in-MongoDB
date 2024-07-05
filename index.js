@@ -4,7 +4,7 @@ const mongoose= require("mongoose");
 const app = express();
 const port = 8000;
  
-//connection
+//connection 
 mongoose.connect('mongodb://127.0.0.1:27017/db_demo1')
 .then(()=> console.log("Mongobd is connected"))
 .catch((err)=> console.log("Not connected",err));
