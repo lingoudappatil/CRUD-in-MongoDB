@@ -10,6 +10,6 @@ const connectDB = async () => {
     } catch (err) {
         console.log("Not connected",err);
         process.exit(1); // Exit process with failure
-    }
+    } 
 };
 module.exports = connectDB;
